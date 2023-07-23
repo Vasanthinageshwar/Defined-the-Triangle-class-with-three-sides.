@@ -1,0 +1,31 @@
+Defined the Triangle class with three sides. In a triangle, the sum of any two sides is greater than the other side. The Triangle class
+
+must adhere to this rule.
+Create the IllegalTriangleException class, and modify the constructor of the Triangle class to throw an IllegalTriangleException
+object if a triangle is created with sides that violate the rule, as follows:
+/** Construct a triangle with the specified sides */
+public Triangle(double side1, double side2, double side3) throws IllegalTriangleException {
+// Implement it
+}
+
+CODE:
+
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+Scanner in = new Scanner(System.in);
+double s1 = in.nextDouble();
+double s2 = in.nextDouble();
+double s3 = in.nextDouble();
+try {
+TriangleWithException t1 = new TriangleWithException(s1, s2, s3);
+System.out.println("Perimeter " + t1.getPerimeter());
+}
+catch (IllegalTriangleException ex) {
+System.out.println("Illegal triangle");
+System.out.println("Side1: " + ex.getSide1());
+System.out.println("Side2: " + ex.getSide2());
+System.out.println("Side3: " + ex.getSide3());
+}
+}
+}
